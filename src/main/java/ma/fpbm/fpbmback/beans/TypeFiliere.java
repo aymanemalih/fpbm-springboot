@@ -1,9 +1,7 @@
 package ma.fpbm.fpbmback.beans;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -14,6 +12,10 @@ public class TypeFiliere {
 
     private String code;
     private String name;
+
+    @OneToMany
+            (mappedBy = "typeFiliere")
+    private List<Filiere> filieres; // Filler has many type
 
 
     public Long getId() {
@@ -38,6 +40,14 @@ public class TypeFiliere {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Filiere> getFilieres() {
+        return filieres;
+    }
+
+    public void setFilieres(List<Filiere> filieres) {
+        this.filieres = filieres;
     }
 
     @Override

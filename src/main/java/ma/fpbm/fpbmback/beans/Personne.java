@@ -18,6 +18,15 @@ public class Personne extends User{
     private String prenom;
     private Date dateDeNaissance;
     private String Address;
+    private String telephone;
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
 
     public String getCin() {
         return cin;
